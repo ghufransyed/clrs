@@ -22,10 +22,66 @@ public class Main {
         //System.out.println(Arrays.toString(test3));
         //System.out.println(Arrays.toString(addBinary(test2,test3)));
         
+        //System.out.println(Arrays.toString(test1));
+        //System.out.println(Arrays.toString(insertionSort(test1)));
+
         System.out.println(Arrays.toString(test1));
-        System.out.println(Arrays.toString(insertionSort(test1)));
-        
+        System.out.println(Arrays.toString(mergeSort(test1, 0, test1.length - 1)));
+
     }
+   
+    // start = index of first element, end = index of last element
+    public static int[] mergeSort(int[] ary,
+                                       int p,
+                                  int r){
+        
+        
+        int q = (int)(Math.ceil((p + r) /(double) 2)); // stack overflow, need to fix recursion calls / checks for base case
+        
+        if ((r - q + 1) > 1) {
+            mergeSort(ary, q, r);
+        }
+        if (q - p > 1){
+            mergeSort(ary,p ,q - 1);
+        }
+        
+        merge(ary, p,q,r);
+           
+       
+        return ary;
+    }
+    
+    private static int[] merge(int[] ary,
+                               int p, // first element  of left subarray
+                               int q, // first element of right subarray
+                               int r){
+        
+        int n1 = q - p;
+        int n2 = r - q + 1;
+        int[] left = new int[n1];
+        int[] right = new int[n2];
+        int lh = 0; // pointer to head of left subarray
+        int rh = 0; // pointer to head of right subarray
+        
+        for (int i = 0 ; i < n1 ; i++){
+            left[i] = ary[p + i];
+        }
+        for (int j = 0 ; j < n2 ; j++){
+            right[j] = ary[q + j];
+        }
+        
+        for (int k = p ; k <= r ; k++){
+            if ((rh >= n2) || (left[lh] < right[rh])){
+                ary[k] = left[lh];
+                lh++;
+            }
+            else if((lh >= n1) || (right[rh] < left[lh])){
+                ary[k] = right[rh];
+                rh++;
+            }
+        }
+        return ary;
+    } 
     
     
     
