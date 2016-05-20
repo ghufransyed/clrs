@@ -7,6 +7,7 @@ public class Main {
         int[] test1 = new int[] { 5, 4, 3, 2, 1};
         int[] test2 = new int[] { 1, 1, 1, 1, 1};
         int[] test3 = new int[] { 1, 1, 1, 1, 1};
+        int[] test4 = new int[] { 1, 2, 3, 4, 5};
         
         
         //System.out.println(Arrays.toString(test1));
@@ -25,10 +26,48 @@ public class Main {
         //System.out.println(Arrays.toString(test1));
         //System.out.println(Arrays.toString(insertionSort(test1)));
 
-        System.out.println(Arrays.toString(test1));
-        System.out.println(Arrays.toString(mergeSort(test1, 0, test1.length - 1)));
+        //System.out.println(Arrays.toString(test1));
+        //System.out.println(Arrays.toString(mergeSort(test1, 0, test1.length - 1)));
 
+        //System.out.println(Arrays.toString(test1));
+        //System.out.println(Arrays.toString(MergeSort.sort(test1, 0, test1.length - 1)));
+
+
+        System.out.println(Arrays.toString(test4));
+        System.out.println(binarySearch(test4, 2, 0, test4.length - 1));
+        
     }
+   
+    // take a sorted list as argument
+    public static int binarySearch(int[] ary,
+                                     int target,
+                                     int p,
+                                     int r){
+        
+        int q = (p + r)/2;
+        if ( p == r){
+            if (ary[p] == target){
+                return p;
+            }
+            else {
+                return -1;
+            }
+        }
+        
+        if (ary[q] == target){
+            return q;
+        }
+        else {
+            if (ary[q] < target){
+                return binarySearch(ary, target, q + 1, r);
+            }
+            else {
+                return binarySearch(ary, target, p, q);
+            }
+        }
+        
+    }
+    
    
     // start = index of first element, end = index of last element
     public static int[] mergeSort(int[] ary,
