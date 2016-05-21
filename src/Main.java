@@ -50,8 +50,10 @@ public class Main {
         //System.out.println(Arrays.toString(test7));
         //System.out.println(Solution.maxProfit(test7));
 
-        System.out.println(Arrays.toString(test8));
-        System.out.println(Solution.maxSubArray(test8));
+        //System.out.println(Arrays.toString(test8));
+        //System.out.println(Solution.maxSubArray(test8));
+        System.out.println("foobar");
+        System.out.println(Solution.reverseString("foobar"));
     }
    
     // take a sorted list as argument
