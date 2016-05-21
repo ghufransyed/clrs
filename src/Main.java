@@ -12,6 +12,7 @@ public class Main {
         int[] test6 = new int[] {2, 1};
         int[] test7 = new int[] {1, 2};
         int[] test8 = new int[] {-2,1,-3,4,-1,2,1,-5,4};
+        int[] test9 = new int[] {13,-3,-25,20,-3,-16,-23,18,20,-7,12,-5,-22,15,-4,7};
         
         
         //System.out.println(Arrays.toString(test1));
@@ -52,8 +53,15 @@ public class Main {
 
         //System.out.println(Arrays.toString(test8));
         //System.out.println(Solution.maxSubArray(test8));
-        System.out.println("foobar");
-        System.out.println(Solution.reverseString("foobar"));
+        //System.out.println("foobar");
+        //System.out.println(Solution.reverseString("foobar"));
+        
+        //System.out.println(38);
+        //System.out.println(Solution.addDigits(38));
+
+
+        System.out.println(Arrays.toString(test9));
+        System.out.println(MaxSubArrayR.maxSubArray(test9, 0, test9.length - 1));
     }
    
     // take a sorted list as argument

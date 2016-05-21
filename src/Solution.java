@@ -95,5 +95,27 @@ public class Solution {
        }
         
         return result.toString();
-    } 
+    }
+    public static boolean canWinNim(int n) {
+        return ((n % 4) != 0);
+    }
+
+    public static int addDigits(int num) {
+        if (num == 0) {return 0; }
+        else if (num % 9 == 0) { return 9; }
+        else { return (num % 9); }
+    }
+
+    /*
+    public static String longestCommonPrefix(String[] strs) {
+        
+        if (strs.length == 0) { return ""; }
+        String result = strs[0];
+        
+        for (int i = 0 ; i < strs.length ; i++){
+            
+        }
+
+    }
+    */
 }
