@@ -51,7 +51,7 @@ public class Main {
         //System.out.println(Solution.maxProfit(test7));
 
         System.out.println(Arrays.toString(test8));
-        System.out.println(Arrays.toString(Solution.maxSubArray(test8)));
+        System.out.println(Solution.maxSubArray(test8));
     }
    
     // take a sorted list as argument

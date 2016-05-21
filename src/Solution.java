@@ -47,9 +47,10 @@ public class Solution {
         
         return maxSum; 
     }
-    public static int[] maxSubArray(int[] nums) {
+    public static int maxSubArray(int[] nums) {
         
-        if (nums.length == 0 || nums.length == 1) {return nums;}
+        if (nums.length == 0) {return 0;} 
+        if (nums.length == 1) {return nums[0];}
         
         int thisSum = nums[0];
         int thisSumStart = 0;
@@ -76,12 +77,14 @@ public class Solution {
             }
         }
         
+        int resultSum = 0;
         int[] result = new int[maxSumEnd - maxSumStart + 1];
         for (int j = 0 ; j < result.length ; j++){
             result[j] = nums[maxSumStart + j];
+            resultSum += result[j];
         }
         
-        return result;
+        return resultSum;
 
     } 
 }
